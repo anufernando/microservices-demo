@@ -1,33 +1,18 @@
-apiVersion: operator.cape.sh/v1alpha1
-kind: ApplicationGroup
-metadata:
-  name: na-sock-shop
-  namespace: sock-shop
-spec:
-  members: 
-  - na-sock-shop
-  type: inbuilt
----
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   annotations:
-  generation: 1
-  labels:
+    kubernetes.io/ingress.class: nginx
   name: sock-shop
-  namespace: sock-shop
-  resourceVersion: "2928"
-  uid: a4959f07-3c82-4ed5-8b2e-9c8d03aa240d
+  namespace: anu
 spec:
-  ingressClassName: nginx
   rules:
-  - host: sock.IP.nip.io
-    http:
+  - http:
       paths:
       - backend:
           service:
-            name: frontend
+            name: front-end
             port:
-              number: 30001
+              number: 80
         path: /
         pathType: ImplementationSpecific
