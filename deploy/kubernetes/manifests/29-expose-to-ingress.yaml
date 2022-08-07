@@ -2,6 +2,7 @@ apiVersion: operator.cape.sh/v1alpha1
 kind: ApplicationGroup
 metadata:
   name: na-sock-shop
+  namespace: sock-shop
 spec:
   members: 
   - na-sock-shop
@@ -14,7 +15,7 @@ metadata:
   generation: 1
   labels:
   name: sock-shop
-  namespace: na-sock-shop
+  namespace: sock-shop
   resourceVersion: "2928"
   uid: a4959f07-3c82-4ed5-8b2e-9c8d03aa240d
 spec:
